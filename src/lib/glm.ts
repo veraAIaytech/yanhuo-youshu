@@ -21,6 +21,7 @@ async function chat(system: string, user: string, timeoutMs = 12000): Promise<st
           { role: "user", content: user },
         ],
         temperature: 0.6,
+        thinking: { type: "disabled" }, // 记账/润色是短任务，关掉推理更快更稳
       }),
       signal: ctrl.signal,
     });
