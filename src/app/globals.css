@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* ============ 烟火有数 · 深夜食堂设计系统 ============
+   「清晨的深夜食堂」：米纸底 + 灯笼琥珀 + 木色 + 葱绿点缀
+   设计令牌集中于此 —— 未来小程序版换壳不换脑 */
+
+@theme {
+  --color-paper: #faf5ea; /* 米纸底（页面背景） */
+  --color-cream: #f3ead8; /* 卡片纸 */
+  --color-ink: #3d2b1f; /* 深暖棕（主文字） */
+  --color-ink-soft: #7a6a58; /* 次级文字 */
+  --color-wood: #8b5e3c; /* 木色 */
+  --color-wood-deep: #5d3f28; /* 深木（描边） */
+  --color-lantern: #e8a33d; /* 灯笼琥珀（主色） */
+  --color-lantern-deep: #c9821f; /* 琥珀深（hover） */
+  --color-night: #2b2118; /* 深夜木（深色区块/阿姨端头图） */
+  --color-night-soft: #3a2d20;
+  --color-scallion: #4a7c59; /* 葱绿（健康/成功） */
+  --color-scallion-light: #e7efe4; /* 葱绿浅底 */
+  --color-tomato: #c4553b; /* 辣椒红（警示/浪费） */
+
+  --font-sans: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Noto Sans SC", system-ui, -apple-system, sans-serif;
+
+  --radius-card: 1.1rem;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  /* iOS 安全区 + 移动端 100dvh 由布局处理 */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+@layer components {
+  /* 通用纸片卡片 */
+  .card-paper {
+    background: var(--color-cream);
+    border: 1px solid color-mix(in srgb, var(--color-wood) 25%, transparent);
+    border-radius: var(--radius-card);
+    box-shadow: 0 2px 10px rgb(61 43 31 / 0.06);
+  }
+
+  /* 主按钮：灯笼琥珀 */
+  .btn-lantern {
+    background: var(--color-lantern);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 999px;
+    padding: 0.75rem 1.25rem;
+    min-height: 44px; /* 触控目标 ≥44px */
+    transition: background 0.15s;
+  }
+  .btn-lantern:active {
+    background: var(--color-lantern-deep);
+  }
+  .btn-lantern:disabled {
+    opacity: 0.5;
+  }
+
+  /* 深夜食堂深色区块（阿姨端头部/预测面板） */
+  .night-panel {
+    background: linear-gradient(160deg, var(--color-night) 0%, var(--color-night-soft) 100%);
+    color: var(--color-paper);
+  }
+
+  /* 手写感标签（黑板粉笔味） */
+  .chalk-tag {
+    border: 1.5px dashed color-mix(in srgb, var(--color-paper) 55%, transparent);
+    border-radius: 0.5rem;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+  }
+}
+
+/* 尊重减弱动效偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

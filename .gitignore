@@ -1,0 +1,53 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+.vercel
+
+# ---- 幕后材料：仅本地，不公开 ----
+# 内部作战计划（评分打法/倒排）
+docs/PLAN.md
+# 提交材料包（表单文案/视频配音词/评委话术）
+docs/SUBMISSION.md
+# 阿姨真实素材（照片/视频/语音：隐私，严禁公开）
+docs/real-materials/
+# 演示截图工作目录
+docs/shots/
