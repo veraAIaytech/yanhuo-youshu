@@ -96,7 +96,7 @@ export default function CustomerPage() {
       <header className="night-panel px-5 pb-6 pt-8">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xs tracking-widest text-paper/60">烟火有数 · 张姐煎饼摊</p>
+            <p className="text-xs tracking-widest text-paper/60">烟火有数 · 良米煎饼</p>
             <h1 className="mt-1 text-2xl font-bold">今天出摊 🌙</h1>
           </div>
           <span className="chalk-tag border-scallion-light text-scallion-light">营业中</span>

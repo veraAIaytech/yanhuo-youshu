@@ -69,7 +69,7 @@ export default function KioskPage() {
         <div className="flex items-center gap-[1.2vw]">
           <span className="text-[4vw]">🥞</span>
           <h1 className="text-[3.2vw] font-black tracking-wide">烟火有数</h1>
-          <span className="chalk-tag hidden text-[1vw] text-paper/60 sm:inline">张姐煎饼摊的 AI 经营副驾</span>
+          <span className="chalk-tag hidden text-[1vw] text-paper/60 sm:inline">良米煎饼的 AI 经营副驾</span>
         </div>
         <p className="text-[1.15vw] text-paper/60">软件应用赛道 · 滴水穿石</p>
       </header>

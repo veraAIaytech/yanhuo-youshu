@@ -141,7 +141,7 @@ export default function CheckoutPage() {
 
       <div className="flex-1 px-4">
         <div className="card-paper p-4">
-          <p className="text-xs text-ink-soft">张姐煎饼摊 · 自提订单</p>
+          <p className="text-xs text-ink-soft">良米煎饼 · 自提订单</p>
           <p className="mt-1 text-3xl font-black">¥{order.total}</p>
           <div className="mt-2 space-y-1 text-sm text-ink-soft">
             {order.items.map((l, i) => (
