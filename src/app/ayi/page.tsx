@@ -160,11 +160,11 @@ export default function AyiPage() {
                     <p className="text-[10px] text-ink-soft">通常</p>
                   </div>
                   <div className="flex-1">
-                    <p className="text-sm font-semibold">
+                    <p className="text-sm font-semibold text-ink">
                       {c.nick}
                       {came && <span className="ml-2 text-xs text-scallion">✓ 已来过</span>}
                     </p>
-                    <p className="text-xs text-ink">{c.favorite}</p>
+                    <p className="text-xs font-medium text-ink">{c.favorite}</p>
                     <p className="mt-0.5 text-[11px] leading-4 text-ink-soft">{c.notes}</p>
                   </div>
                 </div>

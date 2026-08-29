@@ -11,7 +11,7 @@ export default function Nav({ active }: { active: "customer" | "ayi" | "board" }
   ];
   return (
     <nav
-      className="sticky bottom-0 z-40 flex border-t border-wood/25 bg-paper/95 backdrop-blur"
+      className="sticky bottom-0 z-40 flex w-full border-t border-wood/25 bg-paper/95 backdrop-blur"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
     >
       {items.map((it) => (

@@ -88,24 +88,26 @@ export default function BoardPage() {
       <div className="flex-1 space-y-4 px-4 pb-6 pt-4">
         {/* 三个收敛指标 */}
         <div className="grid grid-cols-3 gap-2 text-center">
-          <div className="card-paper p-3">
+          <div className="card-paper min-w-0 p-3">
             <p className="text-[11px] text-ink-soft">预测误差</p>
             <p className="mt-1 text-lg font-black text-tomato">±{summary.errorEarlyPct}%</p>
             <p className="text-[11px] text-ink-soft">↓ 前5天</p>
             <p className="text-xl font-black text-scallion">±{summary.errorRecentPct}%</p>
             <p className="text-[11px] text-ink-soft">近5天</p>
           </div>
-          <div className="card-paper p-3">
+          <div className="card-paper min-w-0 p-3">
             <p className="text-[11px] text-ink-soft">平均每天浪费</p>
             <p className="mt-1 text-lg font-black text-tomato">{summary.wasteEarly} 份</p>
             <p className="text-[11px] text-ink-soft">↓ 前5天</p>
             <p className="text-xl font-black text-scallion">{summary.wasteRecent} 份</p>
             <p className="text-[11px] text-ink-soft">近5天</p>
           </div>
-          <div className="card-paper p-3">
+          <div className="card-paper min-w-0 p-3">
             <p className="text-[11px] text-ink-soft">浪费减少</p>
-            <p className="mt-2 text-3xl font-black text-scallion">{summary.wasteSavedPct}%</p>
-            <p className="mt-1 text-[11px] text-ink-soft">≈ 每月省 出 {summary.wasteEarly - summary.wasteRecent}×30 份食材</p>
+            <p className="mt-2 text-2xl font-black text-scallion">{summary.wasteSavedPct}%</p>
+            <p className="mt-1 text-[10px] leading-3 break-words text-ink-soft">
+              ≈ 每月省 {(summary.wasteEarly - summary.wasteRecent) * 30} 份食材钱
+            </p>
           </div>
         </div>
 

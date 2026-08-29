@@ -78,9 +78,9 @@ export default function KioskPage() {
       <section className="flex flex-1 items-center gap-[4vw] px-[4vw]">
         <div className="flex-1">
           <p className="text-[1.6vw] leading-relaxed text-lantern">不抢阿姨的锅铲</p>
-          <h2 className="text-[4.6vw] font-black leading-[1.15]">
+          <h2 className="text-[3.9vw] font-black leading-[1.2]">
             只补她的
-            <span className="text-lantern">记性 · 算盘 · 喇叭</span>
+            <span className="whitespace-nowrap text-lantern">记性 · 算盘 · 喇叭</span>
           </h2>
           <p className="mt-[2.5vh] max-w-[38vw] text-[1.35vw] leading-relaxed text-paper/75">
             一个煎饼摊自己的数据，第一次为摊主工作——
@@ -105,7 +105,7 @@ export default function KioskPage() {
               </div>
             </div>
           )}
-          <p className="mt-[2vh] text-[1.1vw] text-paper/50">_today {stallNote}</p>
+          <p className="mt-[2vh] text-[1.1vw] text-paper/50">今天 · {stallNote}</p>
         </div>
 
         {/* 右侧轮播卡 */}
