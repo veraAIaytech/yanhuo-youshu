@@ -5,7 +5,7 @@
 const ZAI_BASE = process.env.ZAI_API_BASE ?? "https://api.z.ai/api/paas/v4";
 const ZAI_MODEL = process.env.ZAI_MODEL ?? "glm-4.5-flash";
 
-async function chat(system: string, user: string, timeoutMs = 12000): Promise<string | null> {
+async function chat(system: string, user: string, timeoutMs = 6000): Promise<string | null> {
   const key = process.env.ZAI_API_KEY;
   if (!key) return null;
   const ctrl = new AbortController();

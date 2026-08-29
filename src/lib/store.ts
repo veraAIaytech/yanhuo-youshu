@@ -57,6 +57,7 @@ export function morningBrief(): MorningBrief {
   const recentErr =
     recent14.slice(-5).reduce((a, d) => a + Math.abs(d.actualUnits - d.predictedUnits) / d.predictedUnits, 0) / 5;
   const confidencePct = Math.max(70, Math.round((1 - recentErr) * 100));
+  const wdNames = ["日", "一", "二", "三", "四", "五", "六"];
   return {
     date: fmt(tomorrow),
     predictedUnits: predicted,
@@ -69,7 +70,7 @@ export function morningBrief(): MorningBrief {
       { menuItemId: "soy-large", name: "现磨豆浆（大杯）", prepUnits: Math.round(predicted * 0.25) },
     ],
     reasons: [
-      "明天周二 · 开学第一周，学生客回流（近 2 个开学周平均 +15%）",
+      `明天（周${wdNames[tomorrow.getDay()]}）· 开学季学生客回流，历史同期约 +15%`,
       "预报降温 16-23°C，热豆浆销量历史提升约 12%",
       "近 5 天预测平均误差已收敛到 ±8% 以内",
     ],

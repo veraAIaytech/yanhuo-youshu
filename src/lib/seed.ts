@@ -173,24 +173,25 @@ export function generateHistory(endDate: Date, days = 14): DailyStat[] {
 }
 
 // ---------- 熟客档案（深夜食堂的魂） ----------
+// 排班覆盖全周：演示的任何一天（含路演周日）至少 2 位熟客到店
 export const REGULARS: CustomerProfile[] = [
   {
     id: "c1",
     nick: "熟客 · 张叔",
-    visitWeekdays: [1, 3, 5],
+    visitWeekdays: [1, 2, 3, 4, 5, 6],
     preferredTime: "07:20",
     favorite: "双蛋煎饼 · 不要香菜 + 咸豆浆",
-    notes: " 构建中：工地早班，风雨无阻；香菜过敏，双蛋是老规矩",
+    notes: " 工地早班，风雨无阻；香菜过敏，双蛋是老规矩",
     totalVisits: 47,
     lastVisitDate: "",
   },
   {
     id: "c2",
     nick: "熟客 · 李阿姨",
-    visitWeekdays: [2, 4],
+    visitWeekdays: [0, 2, 4, 6],
     preferredTime: "06:50",
     favorite: "原味煎饼 + 甜豆浆（大杯）",
-    notes: "晨练完顺路，总给老伴带一份，豆浆要最烫的",
+    notes: "晨练完顺路，周末也练；总给老伴带一份，豆浆要最烫的",
     totalVisits: 32,
     lastVisitDate: "",
   },
@@ -207,7 +208,7 @@ export const REGULARS: CustomerProfile[] = [
   {
     id: "c4",
     nick: "熟客 · 程序员小刘",
-    visitWeekdays: [1, 2, 3, 4, 5],
+    visitWeekdays: [0, 1, 2, 3, 4, 5],
     preferredTime: "08:40",
     favorite: "全套煎饼 + 大杯豆浆",
     notes: "加班到最晚，起得最晚；上月连来 19 天，阿姨劝他吃点绿的",

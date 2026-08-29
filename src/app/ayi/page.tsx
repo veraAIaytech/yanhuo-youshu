@@ -99,8 +99,9 @@ export default function AyiPage() {
 
   if (!data) {
     return (
-      <main className="mx-auto flex min-h-dvh w-full max-w-md items-center justify-center">
-        <p className="text-paper/60">炉子生着呢…</p>
+      <main className="night-panel flex min-h-dvh flex-col items-center justify-center gap-3">
+        <span className="inline-block h-8 w-8 animate-spin rounded-full border-2 border-lantern border-t-transparent" />
+        <p className="text-sm text-paper/70">炉子生着呢…</p>
       </main>
     );
   }

@@ -6,16 +6,29 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Nav from "@/components/Nav";
-import type { Order } from "@/lib/types";
+import type { MenuItem, Order } from "@/lib/types";
 
 type Env = "wechat" | "alipay" | "browser";
 
 export default function CheckoutPage() {
   const [order, setOrder] = useState<Order | null>(null);
+  const [menu, setMenu] = useState<MenuItem[]>([]);
   const [pickupCode, setPickupCode] = useState("");
   const [notFound, setNotFound] = useState(false);
   const [env, setEnv] = useState<Env>("browser");
   const [paying, setPaying] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/menu")
+      .then((r) => r.json())
+      .then((d) => setMenu(d.menu))
+      .catch(() => {});
+  }, []);
+
+  // 展示用：内部 id → 顾客看得懂的名字
+  const itemName = (id: string) => menu.find((m) => m.id === id)?.name ?? id;
+  const optName = (menuId: string, optId: string) =>
+    menu.find((m) => m.id === menuId)?.options.find((o) => o.id === optId)?.name ?? optId;
 
   useEffect(() => {
     const id = new URLSearchParams(window.location.search).get("orderId");
@@ -133,8 +146,10 @@ export default function CheckoutPage() {
           <div className="mt-2 space-y-1 text-sm text-ink-soft">
             {order.items.map((l, i) => (
               <p key={i}>
-                × {l.qty} · {l.menuItemId}
-                {l.optionIds.length ? `（${l.optionIds.join("/")}）` : ""}
+                × {l.qty} · {itemName(l.menuItemId)}
+                {l.optionIds.length
+                  ? `（${l.optionIds.map((oid) => optName(l.menuItemId, oid)).join("/")}）`
+                  : ""}
               </p>
             ))}
             <p>自提时段：{order.pickupSlot}</p>
